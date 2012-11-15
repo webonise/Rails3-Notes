@@ -1,0 +1,20 @@
+/.bundle
+
+# Ignore databse config
+/public/images/
+/config/database.yml
+/vendor/bundle/*
+
+# Ignore the default SQLite database.
+/db/*.sqlite3
+
+# Ignore all logfiles and tempfiles.
+/log/*.log
+/tmp/sessions/*
+/tmp/cache/*
+#Ignore all .Idea
+/.idea/
+.idea/*
+.idea/workspace.xml
+/.idea/workspace.xml
+/tmp/
