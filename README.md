@@ -16,6 +16,6 @@ Rails 3 automatically creates a simple **.gitignore** file when a new applicatio
 
 ## Using the File
 
-Copy the example file **gitignore.txt** to the top level of your working directory and rename it *.gitignore*.
+Copy the example file **gitignore.example** to the top level of your working directory and rename it *.gitignore*.
 
 Note that git will not ignore a file that was already tracked before a rule was added to this file to ignore it. In such a case the file must be un-tracked, usually with `git rm --cached filename`.

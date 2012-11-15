@@ -1,0 +1,78 @@
+#----------------------------------------------------------------------------
+# Ignore these files when commiting to a git repository
+#----------------------------------------------------------------------------
+
+# Rails specific artifacts
+
+# Ignore database config
+/config/database.yml
+
+# Ignore the default SQLite database.
+/db/*.sqlite3
+
+# Ignore all log_files and temp_files.
+/log/*
+tmp/*
+/log/*.log
+/tmp/sessions/*
+/tmp/cache/*
+/tmp/
+
+#Ignore all .Idea(RubyMine Project Directory)
+/.idea/
+.idea/*
+/.idea/workspace.xml
+
+# bundler state
+/.bundle
+/vendor/bundle/
+
+
+#Ignore the Gemfile.lock
+Gemfile.lock
+
+# default files and folder present in public folder need to be ignored
+/public/cache
+/public/stylesheets/compiled
+/public/system
+
+
+# various artifacts
+**.war
+*.rbc
+*.sassc
+.rspec
+.sass-cache
+/config/config.yml
+/coverage.data
+/coverage/
+/db/*.javadb/
+/doc/api/
+/doc/app/
+/doc/features.html
+/doc/specs.html
+/spec/tmp/*
+/cache
+/capybara*
+/capybara-*.html
+/gems
+/rerun.txt
+/spec/requests
+/spec/routing
+/spec/views
+/specifications
+
+# scm revert files
+**.orig
+
+# Mac finder artifacts
+.DS_Store
+
+# Netbeans project directory
+/nbproject/
+
+# Textmate project files
+/*.tmpproj
+
+# vim artifacts
+**.swp
