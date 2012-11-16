@@ -43,6 +43,11 @@ You can generate a PDF or an HTML copy of this guide using
     * [Query Optimization](#query-optimization)
     * [Splitting Routes Into Smaller](#splitting-routes-into-smaller)
     * [Directly Access Object](#directly-access-object)
+    * [Grep an object’s available methods](#grep-an-object’s-available-methods)
+    * [Check Objects Relations Exist](#check-objects-relations-exist)
+    * [The Beauty of Collect](#the-beauty-of-collect)
+    * [Optimize your code comments](#optimize-your-code-comments)
+    * [NoMethodError](#no-method-error)
     * [Configuration](#configuration)
     * [Routing](#routing)
     * [Controllers](#controllers)
@@ -164,6 +169,99 @@ You can generate a PDF or an HTML copy of this guide using
         # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
         config.assets.precompile += %w( rails_admin/rails_admin.css rails_admin/rails_admin.js )
         ```
+
+## Grep an object’s available methods
+* Because Object.methods returns an array, you can grep that just like in this tip about grepping anything from your enumerables.
+* For example, if you are looking for a particular method of an object, you can easily narrow down the results like this:
+    ```
+    Object.methods.grep /inspect/
+    O/P => ["inspect", "pretty_inspect", "pretty_print_inspect"]
+    ```
+
+## Check Objects Relations Exist
+
+* How to check if objects or relations exist?
+  Here’s an interesting fact when checking if objects or relations exist in a collection.
+  * To check if there were any items present in a collection you can do something like this:
+    `Object.relation.present?`
+  * This, however, is better:
+    `Object.relation.any?`
+  * Turns out that - when you request associated objects for the first time - the `any?` method will perform a `COUNT (*)` SQL query where as the `present?` method will perform a `SELECT (*)` which is infinitely slower than performing a count.
+        ```
+        property = Property.first
+        property.amenities.present?
+        # SQL (284.1ms)   SELECT * FROM "amenities" WHERE ("amenity".property_id = 1)
+
+        property = Property.first
+        property.amenities.any?
+        # SQL (1.2ms)   SELECT count(*) AS count_all FROM "amenities" WHERE ("amenities".property_id = 1)
+        ```
+
+## The Beauty of Collect
+
+* To get an array of some property from the objects
+    ```Ruby
+	amount_array = account.orders.collect { |order| order.amount.some_operation }
+    ```
+* For live project example
+    ```Ruby
+    property_list = Property.near(params[:place], 5)
+    available_property_ids = property_list.collect(&:id)
+    ```
+* we can also use map
+    ```Ruby
+    amount_array = account.orders.map { |order| order.amount.some_operation }
+    ```
+
+## Optimize your code comments
+
+* FIXME, TODO and OPTIMIZE code comments
+    * You can add some special notes to your source code comments in Rails to remind you later of stuff you need to do:
+        ```Ruby
+        class Property < ActiveRecord::Base
+          # TODO add named_scopes
+          # FIXME method A is broken
+          # OPTIMIZE improve the code
+
+          has_many :amenities
+          ....
+        end
+        ```
+    * You can list these special notes with a rake task:
+        ```
+        $ rake notes
+        app/models/property.rb:
+          * [2] [TODO] add named_scopes
+          * [3] [FIXME] method A is broken
+          * [4] [OPTIMIZE] improve the code
+        ```
+
+## NoMethodError
+* How to get rid of from `NoMethodError`
+    * First by using unless
+        ```Ruby
+        article = Article.find_by_title("My Article")
+        unless article.nil?
+          article.body
+        end
+        ```
+
+    * Second by using new and trendy `try`
+    * With `try` you can skip the `nil?` check and do the following:
+    ```
+    Article.find_by_title("My Article").try(:body) => #body or nil
+    ```
+## Sql query on console
+* To see sql querry on console as active record log
+  Just put below lines into `development.rb` file
+    ```Ruby
+    if "irb" == $0
+      ActiveRecord::Base.logger = Logger.new(STDOUT)
+    end
+    ```
+
+
+
 ## Configuration
 
 * Put custom initialization code in `config/initializers`. The code in
