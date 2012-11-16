@@ -42,9 +42,9 @@ You can generate a PDF or an HTML copy of this guide using
 # Table of Contents
 
 * [Developing Rails applications](#developing-rails-applications)
-    * [Query Optimization](#query_optimization)
-    * [Splitting Routes Into Smaller](#splitting_routes_into_smaller)
-    * [Directly Access Object](#directly_access_object)
+    * [Query Optimization](#query-optimization)
+    * [Splitting Routes Into Smaller](#splitting-routes-into-smaller)
+    * [Directly Access Object](#directly-access-object)
     * [Configuration](#configuration)
     * [Routing](#routing)
     * [Controllers](#controllers)
