@@ -28,11 +28,9 @@ The goal of this guide is to present a set of best practices and style
 prescriptions for Ruby on Rails 3 development.
 Rails is an opinionated framework and this is an opinionated guide. In
 my mind I'm totally certain that
-[RSpec](https://www.relishapp.com/rspec) is superior to Test::Unit,
 [Sass](http://sass-lang.com/) is superior to CSS and
 [Haml](http://haml-lang.com/) ([Slim](http://slim-lang.com/)) is
-superior to Erb. So don't expect to find any Test::Unit, CSS or Erb
-advice in here.
+superior to Erb.
 
 Some of the advice here is applicable only to Rails 3.1+.
 
