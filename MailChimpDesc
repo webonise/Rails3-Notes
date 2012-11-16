@@ -1,0 +1,100 @@
+MailChimp helps you design email newsletters, share them on social networks, integrate with services you already use, and track your results. It's like your own personal publishing platform.
+Before Moving towards The API and code related things You should need to Know abt  the some basic foundations part of mailchimp
+
+Lists - we can create list with the mailchimp and and add the people with the respective types  to a list. the benefit of list is that if we want to send a same newsletter to a group of people this is the simplest way to add all these people to list and send the newsletter to that list.
+Templates:Templates are reusable email designs that establish your branding. Create once, then reuse often as the starting point for email campaigns. these also act as the layout for the campaign. We can also create our custom template or also use the built in templates to send the campaigns
+Campaigns: Campaigns add content to an instance of a template. Select a template, add copy and images, then send.
+
+Follwing is the link to the APIs for the mailChimp http://apidocs.mailchimp.com/api/rtfm/
+
+Although Ruby has provided many gems to ping the MAilchimp API but I hav use the Hominid gem for it
+
+Hominid:  Hominid is a Ruby gem that provides a wrapper for interacting with the Mailchimp API
+
+You will need a Mailchimp account. Once you have your Mailchimp account set up, you will need to generate an API key in order to get started using Hominid (or you can use OAuth2 as well)
+
+I have not use the Oauth just generate a API key and use that key to create a session between the application and the MailChimp
+
+Installation
+
+(sudo) gem install hominid
+
+Methods:
+
+To get a Hominid Object
+           h = Hominid::API.new('your_api_key')
+
+You can also override the default configuration by passing in your own when initializing:
+          h = Hominid::API.new('your_api_key', {:secure => true, :timeout => 60})
+
+You can then run any of the methods that you find in the Mailchimp API Documentation against it. Simply convert the names to the more Ruby-like underscored versions (e.g. listUpdateMember becomes list_update_member).
+
+You do not need to pass your api_key to each method, as that is done automatically for you:
+
+Examples
+
+# list_id is a short hex string used internally by MailChimp to identify your lists (e.g. 'eceeae8b22')
+# it's returned as the "id" member of the structure returned by the 'lists' call.
+h.get_account_details
+# Get all lists associated with this API key
+h.lists
+# Subscribe 'joe@public.com', with merge variables 'FNAME' and 'LNAME', to the list identified by list_id
+h.list_subscribe(list_id, 'joe@public.com', {'FNAME' => 'Joe', 'LNAME' => 'Public'}, 'html', false, true, true, false)
+h.list_batch_subscribe(list_id, [{:EMAIL => 'joe@public.com', :EMAIL_TYPE => 'html'}, {:EMAIL => 'jane@doe.com', :EMAIL_TYPE => 'html'}])
+h.campaign_create('regular', {:list_id => list_id, ...}, {:html => 'Campaign HTML content', ...})
+h.template_add('template_name', 'Template HTML Code')
+h.list_interest_grouping_add(list_id, 'Grouping Title', 'hidden', ['First Group', 'Second Group', 'Third Group'])
+h.list_static_segment_add('Sample Static Segment')
+
+
+Finder Methods
+
+
+Hominid includes some finder methods for campaigns and lists  to help with finding each of these resources:
+
+h.find_list_by_name('my_mailing_list')
+h.find_list_id_by_name('my_mailing_list')
+h.find_campaigns_by_list_name('my_mailing_list')
+
+
+Following is the example stats how to send the newsletter Using the hominid gem
+
+@hominid= Hominid::API.new('XXXXXXXXXXXXXXXXXXXXXXXXXXXXX’')
+
+content = Hash.new
+    content['html'] = ""
+    content['text'] = "hi"
+
+    type = 'regular'
+    opts = Hash.new
+    opts['subject'] =:subject
+    opts['from_email'] = “some email”
+    opts['from_name'] = somename
+    opts['to_name'] = toname
+    begin
+      opts['list_id'] = @hominid.find_list_id_by_name(some_list_name)
+      template= @hominid.template_add(params[:template_name],params[:template_content])
+      logger.info  template.inspect
+      opts['template_id']= template
+      campaign = @hominid.campaign_create(type,opts,content)
+      @hominid.campaign_send_now(campaign)
+    rescue
+      template = nil
+    end
+      if template == nil
+      @status = "Campaign not send because you have given invalid name to Template your template name should be unique and should be almost 50 characters long"
+    else
+       @status = "Send SuccessFully"
+
+Explanation:
+
+
+in this code i have use the followings methods  with their helpful links
+
+templateAdd(string apikey, string name, string html)  http://apidocs.mailchimp.com/api/1.3/templateadd.func.php
+
+
+campaignCreate(string apikey, string type, array options, array content, array segment_opts, array type_opts) http://apidocs.mailchimp.com/api/1.3/campaigncreate.func.php
+
+campaignSendNow(string apikey, string cid)  http://apidocs.mailchimp.com/api/rtfm/campaignsendnow.func.php
+
