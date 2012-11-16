@@ -73,6 +73,7 @@ You can generate a PDF or an HTML copy of this guide using
             has_many :amenities, :select => 'id,name'
         end
         ```
+
 ## Splitting Routes Into Smaller
 
 * Split route namespaces into different files
