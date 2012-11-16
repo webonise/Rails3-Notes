@@ -1,0 +1,65 @@
+# Tell Mongoid which environment this configuration is for.
+
+#gem "mongoid", "~> 3.0.0"  add this inside gemfile
+#bundle install
+#The minimum version of MongoDB that is required for you to run Mongoid 3 is 2.0.0.
+#
+#You can generate a config file by executing the generator and then editing myapp/config/mongoid.yml to your heart's desire. Mongoid will then handle everything else from there.
+#$ rails g mongoid:config
+#
+
+
+development:
+  sessions:
+    default:
+      database: mongoid
+      hosts:
+        - localhost:27017
+production:
+  # This starts the session configuration settings. You may have as
+  # many sessions as you like, but you must have at least 1 named
+  # 'default'.
+  sessions:
+    # Define the default session.
+    default:
+      # A session can have any number of hosts. Usually 1 for a single
+      # server setup, and at least 3 for a replica set. Hosts must be
+      # an array of host:port pairs. This session is single server.
+      hosts:
+        - flame.mongohq.com:27017
+      # Define the default database name.
+      database: mongoid
+      # Since this database points at a session connected to MongoHQ, we must
+      # provide the authentication details.
+      username: user
+      password: password
+    # This defines a secondary session at a replica set.
+    replica_set:
+      # This configuration is a 3 node replica set.
+      hosts:
+        - dedicated1.myapp.com:27017
+        - dedicated2.myapp.com:27017
+        - dedicated3.myapp.com:27017
+      database: mongoid
+      # We can set session specific options, like reads executing
+      # on secondary nodes, and defaulting the session to safe mode.
+      options:
+        consistency: :eventual
+        safe: true
+    # This defines a tertiary session at a Mongos fronted shard.
+#  options:
+#    allow_dynamic_fields: false
+#    identity_map_enabled: true
+#    include_root_in_json: true
+#    include_type_for_serialization: true
+#    # Note this can also be true if you want to preload everything, but this is
+#    # almost never necessary. Most of the time set this to false.
+#    preload_models:
+#      - Canvas
+#      - Browser
+#      - Firefox
+#    scope_overwrite_exception: true
+#    raise_not_found_error: false
+#    skip_version_check: false
+#    use_activesupport_time_zone: false
+#    use_utc: true
