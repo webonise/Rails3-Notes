@@ -33,4 +33,20 @@ In USAF store we used spree E-Commerce Platform. For admin side authentication w
 
 Spree by default provide only two major roles (user & admin) but in USAF store we created multiple admin roles (usaf admin & c4g admin) to achive this spree provide Rails cancan. Using this we customized cancan so that we can manage multiple admin roles with different privileges. For this we refereed [Spree Role Management](http://guides.spreecommerce.com/security.html#authorization)
 
+# Logic Customization in Spree
+
+In USAF store we overridden Spree’s business logic (models, controllers, helpers, etc) as per requirement.
+
+## Extending Classes
+
+Standard practice for including such changes in your application or extension is to create a file within the relevant app/models or app/controllers directory with the original class name with _decorator appended.
+
+To activate your decorators you need to include the following code in your lib/spree_site.rb or lib/extension_name.rb file:
+
+        '''Ruby
+            Dir.glob(File.join(File.dirname(__FILE__), "../app/**/*_decorator*.rb")) do |c|
+                Rails.configuration.cache_classes ? require(c) : load(c)
+            end
+        '''
+
 
