@@ -3,7 +3,7 @@
 Foursquare is a location-based social networking website mainly for mobile devices. Users "check in" at venues using a mobile website, text messaging or a device-specific application by selecting from a list of venues the application locates nearby.
 Foursquare allows users to let their friends know what they are up to by checking in to different venues. This is great for businesses as it helps them track consumers whereabouts as well as the things they are saying about each venue. 
 
-Check-in: A "check-in" refers to location based post on a Forsquare. By "checking-in" through your mobile device or PC uses GPS-technology to find your current location. You can "check-in" from any location imaginable. Foursquare has created a rewards based program. After you "check-in" your friends will know where you are and specific badges will be presented to your foursquare profile. 
+Check-in: A "check-in" refers to location based post on a Forsquare. By "checking-in" through your mobile device or PC uses GPS-technology to find your current location. You can "check-in" from any location imaginable. Foursquare has created a rewards based program. After you "check-in" your friends will know where you are and specific badges will be presented to your foursquare profile.  
 
 Follwing is the link to the APIs for the Forsquare 
 https://developer.foursquare.com/docs/
@@ -30,7 +30,7 @@ Here I am providing a code snippet for accessing Acess Token.
           :mode => :query,
           :param_name => "oauth_token",
       })
-      access_token=token.token
+      @access_token=token.token
        end
 
 
