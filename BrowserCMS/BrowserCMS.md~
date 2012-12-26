@@ -1,7 +1,7 @@
-#Browser CMS
+# Browser CMS
 
-##Introduction :
-	BrowserCMS is a general purpose, open source Web Content Management System (CMS), written in Ruby on Rails. It is designed to support three distinct groups of people:
+## Introduction :
+BrowserCMS is a general purpose, open source Web Content Management System (CMS), written in Ruby on Rails. It is designed to support three distinct groups of people:
 
 * Non-technical web editors who want a humane system to manage their site, without needing to understand what HTML or even Rails is.
 * Designers who want to create large and elegantly designed websites with no artificial
@@ -9,9 +9,9 @@ constraints by the CMS.
 * Developers who want create CMS driven websites for their clients, or add a CMS to their
 Rails applications.
 
-##Features :
+## Features :
 
-       Here's a quick overview of some of the more notable features:
+Here's a quick overview of some of the more notable features:
 * **It's just Rails:**
         Each CMS project is a rails project that depends on the BrowserCMS gem. Developers can add new controllers, views, etc., just like any rails project.
 * **Runs on Rails 3.2:**
@@ -35,8 +35,8 @@ designs that are still easy to manage by non-technical users. Developers can con
 	Full page caching allows the web server (Apache) to serve HTML statically for any pages that have not changed, reducing server load.
 
 
-##Basic Concept :
-	There are several concepts which underly how BrowserCMS works. To be productive, users of BrowserCMS should ideally understand these ideas:
+## Basic Concept :
+There are several concepts which underly how BrowserCMS works. To be productive, users of BrowserCMS should ideally understand these ideas:
 * **Pages**
 	Visitors experience your site primarily via pages. Pages are really compound documents, consisting of more than one editable area of content. The allows for intricate design, without needing to be edited via single giant HTML area.
 * **Content Blocks**
@@ -51,30 +51,30 @@ designs that are still easy to manage by non-technical users. Developers can con
 	 Security is handled via users and groups. A user might represent a ‘public’ user, who can access some sections of your website (like a ‘Members only section’). Or they might be a ‘CMS’ user who has the ability to make changes to the content via the CMS editing tools. Each user can be part of multiple groups, which define what they can do, including editing pages, viewing content or publishing new pages.
 
       To create website with BrowserCMS we need to follow just few steps :
-	   $ gem install browsercms
-	   $ bcms demo project_name
-	   $ cd project_name
-	   $ rake db:install
-	   $ rails server
+* $ gem install browsercms
+* $ bcms demo project_name
+* $ cd project_name
+* $ rake db:install
+* $ rails server
 
 
 
-##Modules :
-	Modules are the easiest way to create and share new features between BrowserCMS projects. By creating new modules to extend the functionality of the core BrowserCMS project, the community can help make developing web sites faster and easier
+## Modules :
+Modules are the easiest way to create and share new features between BrowserCMS projects. By creating new modules to extend the functionality of the core BrowserCMS project, the community can help make developing web sites faster and easier
 through reusable code.
 	There are inbuilt modules available we need to include those module in our
 project as per requirements.
 
        To include module in project, these are the steps :
-		 $ gem install module_name
-	         $ rails g cms:install module_name
-	         $ rake db:migrate
-	         $ rails s
+* $ gem install module_name
+* $ rails g cms:install module_name
+* $ rake db:migrate
+* $ rails s
 
-##Some useful links :
-	 [how to use BrowserCMS to build and manage websites](https://github.com/browsermedia/browsercms/wiki/User%27s-manual)
+## Some useful links :
+[how to use BrowserCMS to build and manage websites](https://github.com/browsermedia/browsercms/wiki/User%27s-manual)
 
-	 [Add BrowserCMS to an existing project](https://github.com/browsermedia/browsercms/wiki/Adding-BrowserCMS-to-an-existing-Rails-project)
+[Add BrowserCMS to an existing project](https://github.com/browsermedia/browsercms/wiki/Adding-BrowserCMS-to-an-existing-Rails-project)
 
 
 
