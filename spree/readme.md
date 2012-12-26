@@ -41,7 +41,7 @@ In Demo store we overridden Spree’s business logic (models, controllers, helpe
 
 Standard practice for including such changes in your application or extension is to create a file within the relevant app/models or app/controllers directory with the original class name with _decorator appended.
 
-* To activate your decorators you need to include the following code in your lib/spree_site.rb or lib/extension_name.rb file:
+To activate your decorators you need to include the following code in your lib/spree_site.rb or lib/extension_name.rb file:
 
     ```Ruby
     Dir.glob(File.join(File.dirname(__FILE__), "../app/**/*_decorator*.rb")) do |c|
@@ -50,7 +50,7 @@ Standard practice for including such changes in your application or extension is
     ```
 ## Adding a custom method to the Model
 
-* app/models/product_decorator.rb
+app/models/product_decorator.rb
 
     ```Ruby
     Spree::Product.class_eval do
@@ -61,7 +61,7 @@ Standard practice for including such changes in your application or extension is
     ```
 ## Adding a custom method to the Controller
 
-* app/controllers/products_controller_decorator.rb
+app/controllers/products_controller_decorator.rb
 
     ```Ruby
     Spree::ProductsController.class_eval do
