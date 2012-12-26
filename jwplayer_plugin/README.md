@@ -15,9 +15,8 @@ Building javascript plugin has two advantages over flash plugin. First is JS plu
 Before writing plugin you must go through the JW Player API reference. The link for that [*JW PLayer API reference*](http://www.longtailvideo.com/support/jw-player/jw-player-for-flash-v5/12540/javascript-api-reference/).
 
 Here is a very basic example plugin, which displays some text on top of the player:
-###Example: Hello World   
-
-  <code> (function(jwplayer){
+###Example: Hello World     
+    (function(jwplayer){
 
       var template = function(player, config, div) {
         function setup(evt) {
@@ -31,8 +30,6 @@ Here is a very basic example plugin, which displays some text on top of the play
       jwplayer().registerPlugin('helloworld', template);
 
     })(jwplayer); 
-<code>	
-
 Let's understand this code line by line.  
 
 1. The first and last line create a  closure, which ensures your code won't interfere with any other JavaScript running on the page.  
