@@ -48,17 +48,19 @@
 
 ## Models
     
-    * Model for Demo 
+    
+    * Model for Demo
 
     ```Ruby
-    class class Demo < ActiveRecord::Base
+
+     class class Demo < ActiveRecord::Base
       
       has_many :photos, :dependent => :destroy
 
       accepts_nested_attributes_for :photos, :reject_if => proc { |attributes| attributes['image'].blank? }
 
-    end
-    ```
+     end
+     ```
 
     * Model for Photo
 
@@ -99,18 +101,18 @@
           <% end %>
           </ul>
   
-        end
+         end
         ```
 
      * new.js.erb (This is for Upload multiple images)
 
-      ```Ruby
+     ```Ruby
 
         $(".uploadPhotoContent").append("<%= escape_javascript(render :partial => "multiple_image", :locals => {:count => @count }) %>");
 
-      ```
+     ```
 
-      ```Ruby
+     ```Ruby
 
         <li>
           <%= fields_for :photos do |photo| %>
@@ -123,7 +125,7 @@
           <% end %>
         </li>
 
-      ```
+     ```
 
 ## Javascript
 
