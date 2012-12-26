@@ -17,7 +17,7 @@ The foundation of any cloud computing stack begins with its infrastructure. Infr
 * eliminate/minimize the need for administration and maintenance of hardware.
 
 
-![Cloud Computing Infrastructure](https://github.com/webonise/Rail3-Notes/blob/master/Cloud%20and%20OpenStack/cloud-structure.jpg)
+![IaaS PaaS SaaS](nehagwebonise.github.com/webonise/Rail3-Notes/Cloud-and-OpenStack/cloud-structure.gif)
 
 
 ![Cloud Computing Infrastructure](https://github.com/webonise/Rail3-Notes/blob/master/Cloud%20and%20OpenStack/cloud-virtualization.gif)
