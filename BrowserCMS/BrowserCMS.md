@@ -65,7 +65,7 @@ through reusable code.
 	There are inbuilt modules available we need to include those module in our
 project as per requirements.
 
-       To include module in project, these are the steps :
+To include module in project, these are the steps :
 * $ gem install module_name
 * $ rails g cms:install module_name
 * $ rake db:migrate
