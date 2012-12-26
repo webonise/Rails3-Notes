@@ -1,4 +1,4 @@
-GIT SUBMODULES
+#GIT SUBMODULES
 
 in short git submodules is a concept for using third party or different repository under
 your repository. and here is the steps to do the same and very simple Let see by an exmaple.
@@ -17,22 +17,22 @@ Now You can update the code of Submodules and push to another repository using t
 git commit ./submodule_folder -m "Added submodule as ./submdule_folder"
 git push origin branch-name
 
-For Furthut update changes here are the steps to it
- do the changes in submodule_demo folder
-	cd to submodule_demo folder
-	git checkout master (initially no branch is there)
-	git add .
-	git commit -m “commit message”
-	git push origin master
+##For Furthut update changes here are the steps to it do the changes in submodule_demo folder
+	* cd to submodule_demo folder
+	* git checkout master (initially no branch is there)
+	* git add .
+	* git commit -m “commit message”
+	* git push origin master
+
 cd .. to your main project folder
-	git add .
-	git commit -m “commit message”
-	git push origin master
+	* git add .
+	* git commit -m “commit message”
+	* git push origin master
 
 for update submodule code in another branches [as submodule are headless]
-	git submodule update
+	* git submodule update
 	and if submodule folder is not present then
-		git submodule init
-		git submodule update
+		* git submodule init
+		* git submodule update
 
 

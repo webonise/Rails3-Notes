@@ -1,6 +1,4 @@
-Creating Secure API For Mobile
-
-Here are the few steps we are taken to make more secure api’s in checkinforgood.
+##Creating Secure API For Mobile
 
     Firstly we created a signed_key from all the parameters we are sending from mobile by appending each parameters in alphabetical order
 
@@ -11,12 +9,11 @@ Here are the few steps we are taken to make more secure api’s in checkinforgoo
 
     Now when a signed_key created by mobile and signed_key created by web match then only we give response to him or else we will give a empty json response with 406 Status code header.
 
-Here is an example to write generic before_filter for checking encryption of api using parameter
-
+#Here is an example to write generic before_filter for checking encryption of api using parameter
+  ```Ruby
 class ApiAuthentication
   #This methods create a digest using the values in params and create a encrypted string using secret key that we used for authentication of API
   # Each Time this Signed key will be different according to the parameters
-
   def self.is_response_authenticated?(params)
     Rails.logger.info("============BEFORE================================#{params.inspect}")
     parameter_data = params.reject{|key,value| ["action","signed_key","controller","format","photos"].include?(key)}
@@ -35,12 +32,14 @@ class ApiAuthentication
     end
   end
 end
+  ```
 
 and here in befor filter we can write this to check authenticity of response
-
+   ```Ruby
  def check_response
    unless ApiAuthentication.is_response_authenticated?(params)
       head :status => 302
     end
  end
+   ```
 
