@@ -15,10 +15,9 @@
 	   * Common Name
 	   * Email Address
 
-##Organization Name and Organization unit name going to Appear on url [partially green
-ssl Header]
-##Common name is a name of the domain on which ssl certificate going to integrate
+**Organization Name and Organization unit name going to Appear on url [partially green ssl Header]**
+**Common name is a name of the domain on which ssl certificate going to integrate**
 
 
-Now you can submit this csr file to SSL Provider. and your ssl cretificate will be get issued after verification
+Now you can submit this csr file to SSL Provider. and your ssl certificate will be get issued after verification
 

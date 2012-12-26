@@ -18,21 +18,21 @@ git commit ./submodule_folder -m "Added submodule as ./submdule_folder"
 git push origin branch-name
 
 ##For Furthut update changes here are the steps to it do the changes in submodule_demo folder
-	* cd to submodule_demo folder
-	* git checkout master (initially no branch is there)
-	* git add .
-	* git commit -m “commit message”
-	* git push origin master
+* cd to submodule_demo folder
+* git checkout master (initially no branch is there)
+* git add .
+* git commit -m “commit message”
+* git push origin master
 
-cd .. to your main project folder
-	* git add .
-	* git commit -m “commit message”
-	* git push origin master
+**cd .. to your main project folder**
+* git add .
+* git commit -m “commit message”
+* git push origin master
 
-for update submodule code in another branches [as submodule are headless]
-	* git submodule update
-	and if submodule folder is not present then
-		* git submodule init
-		* git submodule update
+**for update submodule code in another branches [as submodule are headless]**
+* git submodule update
+**and if submodule folder is not present then**
+* git submodule init
+* git submodule update
 
 
