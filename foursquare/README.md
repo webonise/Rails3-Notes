@@ -29,7 +29,7 @@ In parameteres we will get code,used that for getting access token with the help
 
 We got **access_ token** now it’s easy to use any of the endpoints,for accessing users data.
 different methods for accessing users data is provided [here](https://developer.foursquare.com/docs/.).  
-by just adding **oauth token**=**access_token** as well as **v=Date.today** to your GET or POST request you can access check-ins,tips vennues etc. 
+by just adding **oauth token=access_token** as well as **v=Date.today** to your GET or POST request you can access check-ins,tips vennues etc. 
 for eg.  
 https://api.foursquare.com/v2/users/self/checkins??oauth_token=ACCESS_TOKEN v=Date.today   
 ####Foursquare2 Gem  
