@@ -17,7 +17,7 @@ Before writing plugin you must go through the JW Player API reference. The link 
 Here is a very basic example plugin, which displays some text on top of the player:
 ###Example: Hello World   
 
-  <pre><code> (function(jwplayer){
+  <code> (function(jwplayer){
 
       var template = function(player, config, div) {
         function setup(evt) {
@@ -31,7 +31,7 @@ Here is a very basic example plugin, which displays some text on top of the play
       jwplayer().registerPlugin('helloworld', template);
 
     })(jwplayer); 
-<code><pre>	
+<code>	
 
 Let's understand this code line by line.  
 
