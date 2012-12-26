@@ -155,3 +155,67 @@ div#footer {
     clear: both;
 }
 ```
+
+You can now just create a new stylesheet insideyour_app/app/assets/stylesheets/store/ and include the following CSS:
+* app/assets/stylesheets/store/foo.css
+
+```css
+div#footer {
+    clear: none;
+    border: 1px solid red;
+}
+```
+
+The store/all.css manifest will automatically include foo.css and it will actually include both definitions with the one from foo.css being included last, hence it will be the rule applied.
+
+## Overriding entire CSS files:
+
+To replace an entire stylesheet as provided by Spree you simply need to create a file with the same name and save it to the corresponding path within your application’s or extension’s app/assets/stylesheets directory.
+For example, to replace store/all.css you would save the replacement toyour_app/app/assets/stylesheets/store/all.css.
+
+## Overriding individual JavaScript functions:
+
+A similar approach can be used for JavaScript functions. For example, if you wanted to override the show_variant_images method:
+
+* app/assets/javascripts/store/product.js 
+
+```js
+var show_variant_images = function(variant_id) {
+  $('li.vtmb').hide();
+  $('li.vtmb-' + variant_id).show();
+  var currentThumb = $('#' + $("#main-image").data('selectedThumbId'));
+  // if currently selected thumb does not belong to current variant, nor to common images,
+  // hide it and select the first available thumb instead.
+  if(!currentThumb.hasClass('vtmb-' + variant_id) && !currentThumb.hasClass('tmb-all')) {
+    var thumb = $($('ul.thumbnails li:visible').eq(0));
+    var newImg = thumb.find('a').attr('href');
+    $('ul.thumbnails li').removeClass('selected');
+    thumb.addClass('selected');
+    $('#main-image img').attr('src', newImg);
+    $("#main-image").data('selectedThumb', newImg);
+    $("#main-image").data('selectedThumbId', thumb.attr('id'));
+  }
+}
+``` 
+
+Again, just create a new JavaScript file insideyour_app/app/assets/stylesheets/store and include the new method definition:
+
+* app/assets/javascripts/store/foo.js
+
+```js
+var show_variant_images = function(variant_id) {
+  alert('hello world');
+}
+``` 
+
+The resulting store/all.js would include both methods, with the latter being the one executed on request.
+
+## Overriding entire JavaScript files:
+
+To replace an entire JavaScript file as provided by Spree you simply need to create a file with the same name and save it to the corresponding path within your application’s or extension’s app/assets/javascripts directory.
+For example, to replace store/all.js you would save the replacement toyour_app/app/assets/javascripts/store/all.js.
+
+## Overriding images:
+
+Finally, images can be replaced by substituting the required file into the same path within your application or extension as the file you would like to replace.
+For example, to replace the Spree logo you would simply copy your logo to:your_app/app/assets/images/admin/bg/spree_50.png.
