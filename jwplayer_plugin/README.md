@@ -65,9 +65,9 @@ Now that we've got our plugin, we need to load it into a player. Store the plugi
     </html>
 This HTML file embeds the player, assigns the plugin to the player, and sets the text option of the plugin to Hello World'. Let's walk through it:
 	
-1. The header requires the jwplayer.js < script> tag. Without jwplayer.js, the JW Player won't work.
-2. Next, we add a < div> tag with ID player. The player will be set up in there.
-3. Then the jwplayer().setup() call is made. Its configuration contains a link to our plugin. The player will load the plugin file relative to the HTML page.
+1. The header requires the jwplayer.js `<script>` tag. Without jwplayer.js, the JW Player won't work.
+2. Next, we add a `<div>` tag with ID player. The player will be set up in there.
+3. Then the `jwplayer().setup()` call is made. Its configuration contains a link to our plugin. The player will load the plugin file relative to the HTML page.
 4. Our ./helloworld.js plugin sets an Object block with plugin options. This can be empty, but our plugin needs one option: the text to set.
 
 ###SLOMO plugin:  
@@ -76,5 +76,5 @@ You will have to just call the getSlomo function of the plugin on any event like
 When "start" is passed then the video will be in slow motion mode. When "pause" is passed then the slowmotion is paused.   
 You can refer this plugin in the same folder.
 for e.g. If you want to pause the slowmotion, you can use
-jwplayer().getPlugin("mlb_slomo").getSlomo("pause");
+`jwplayer().getPlugin("mlb_slomo").getSlomo("pause");`
 
