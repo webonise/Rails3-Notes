@@ -27,15 +27,15 @@ Spree is a full featured commerce platform written for the Ruby on Rails framewo
     
 # Custom Authentication in Spree
 
-In USAF store we used spree E-Commerce Platform. For admin side authentication we used Rails Devise. Spree already provide Devise for user and admin authentication but we customized spree authentication to achieve different admin roles and their authentication. For this we refereed [Spree Custom Authentication](http://guides.spreecommerce.com/authentication.html)
+In Demo store we used spree E-Commerce Platform. For admin side authentication we used Rails Devise. Spree already provide Devise for user and admin authentication but we customized spree authentication to achieve different admin roles and their authentication. For this we refereed [Spree Custom Authentication](http://guides.spreecommerce.com/authentication.html)
 
 # Role Management in Spree
 
-Spree by default provide only two major roles (user & admin) but in USAF store we created multiple admin roles (usaf admin & c4g admin) to achive this spree provide Rails cancan. Using this we customized cancan so that we can manage multiple admin roles with different privileges. For this we refereed [Spree Role Management](http://guides.spreecommerce.com/security.html#authorization)
+Spree by default provide only two major roles (user & admin) but in Demo store we created multiple admin roles (super admin & admin) to achive this spree provide Rails cancan. Using this we customized cancan so that we can manage multiple admin roles with different privileges. For this we refereed [Spree Role Management](http://guides.spreecommerce.com/security.html#authorization)
 
 # Logic Customization in Spree
 
-In USAF store we overridden Spree’s business logic (models, controllers, helpers, etc) as per requirement.
+In Demo store we overridden Spree’s business logic (models, controllers, helpers, etc) as per requirement.
 
 ## Extending Classes
 
@@ -48,3 +48,26 @@ Standard practice for including such changes in your application or extension is
         Rails.configuration.cache_classes ? require(c) : load(c)
     end
     ```
+## Adding a custom method to the Model
+
+* app/models/product_decorator.rb
+
+    ```Ruby
+    Spree::Product.class_eval do
+        def some_method
+            ...
+        end
+    end
+    ```
+## Adding a custom method to the Controller
+
+* app/controllers/products_controller_decorator.rb
+
+    ```Ruby
+    Spree::ProductsController.class_eval do
+        def some_action
+            ...
+        end
+    end
+    ```
+The exact same format can be used to redefine an existing method.
