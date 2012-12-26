@@ -139,3 +139,29 @@ Sometimes the customization required to a view are so substantial that using a D
 To override any of Spree’s default views including those for the admin interface, simply create a file with the same filename in your app/views directory.
 For example, to override the main layout, create the file
 * app/views/spree/layouts/spree_application.html.erb
+
+
+# Overriding Spree’s core assets
+
+It’s recommended to attempt to replace as little as possible in a given JavaScript or stylesheet file.
+
+## Overriding individual CSS styles
+
+Say for example you want to replace the following CSS:
+* app/assets/stylesheets/store/screen.css
+
+```css
+div#footer {
+    clear: both;
+}
+```
+
+You can now just create a new stylesheet insideyour_app/app/assets/stylesheets/store/ and include the following CSS:
+* app/assets/stylesheets/store/foo.css
+
+```css
+div#footer {
+    clear: none;
+    border: 1px solid red;
+}
+```

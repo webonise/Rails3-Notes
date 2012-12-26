@@ -87,7 +87,7 @@ Deface is a standalone Rails 3 library that enables you to customize Erb templat
 For example, take the Checkout Registration template, which looks like this:
 * app/views/spree/checkout/registration.html.erb
 
-```Ruby
+```erb
 <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @user } %>
 <h2><%= t(:registration) %></h2>
 <div id="registration" data-hook>
@@ -139,3 +139,19 @@ Sometimes the customization required to a view are so substantial that using a D
 To override any of Spree’s default views including those for the admin interface, simply create a file with the same filename in your app/views directory.
 For example, to override the main layout, create the file
 * app/views/spree/layouts/spree_application.html.erb
+
+
+# Overriding Spree’s core assets
+
+It’s recommended to attempt to replace as little as possible in a given JavaScript or stylesheet file.
+
+## Overriding individual CSS styles
+
+Say for example you want to replace the following CSS:
+* app/assets/stylesheets/store/screen.css
+
+```css
+div#footer {
+    clear: both;
+}
+```
