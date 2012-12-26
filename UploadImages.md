@@ -19,7 +19,7 @@
 ## Controllers
 
 
-    ```
+    ```Ruby
     class DemosController < ApplicationController
       
       def new
@@ -76,6 +76,7 @@
     ```
 
 ## Views
+	*demos/form.html.erb
 
         ```Ruby
         <%= content_for :head do %>
@@ -104,12 +105,16 @@
          end
         ```
 
-     * new.js.erb (This is for Upload multiple images)
+     * demos/new.js.erb (This is for Upload multiple images)
 
      ```Ruby
         $(".uploadPhotoContent").append("<%= escape_javascript(render :partial => "multiple_image", :locals => {:count => @count }) %>");
 
      ```
+
+
+    *demos/_multiple_image.html.erb
+
 
      ```Ruby
 
