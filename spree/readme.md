@@ -73,3 +73,69 @@ end
 ```
 
 The exact same format can be used to redefine an existing method.
+
+# View Customization in Spree
+
+View customization allows you to extend or replace any view within a Spree. Their are options available:
+* Using Deface for view customization
+* Replacing entire view templates
+
+## Using Deface for view customization
+
+Deface is a standalone Rails 3 library that enables you to customize Erb templates without needing to directly edit the underlying view file. Deface allows you to use standard CSS3 style selectors to target any element (including Ruby blocks), and perform an action against all the matching elements.
+
+For example, take the Checkout Registration template, which looks like this:
+* app/views/spree/checkout/registration.html.erb
+
+```Ruby
+<%= render :partial => 'spree/shared/error_messages', :locals => { :target => @user } %>
+<h2><%= t(:registration) %></h2>
+<div id="registration" data-hook>
+  <div id="account" class="columns alpha eight">
+    <!-- TODO: add partial with registration form -->
+  </div>
+  <% if Spree::Config[:allow_guest_checkout] %>
+    <div id="guest_checkout" data-hook class="columns omega eight">
+      <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @order } %>
+      <h2><%= t(:guest_user_account) %></h2>
+      <%= form_for @order, :url => update_checkout_registration_path, :method => :put, :html => { :id => 'checkout_form_registration' } do |f| %>
+        <p>
+          <%= f.label :email, t(:email) %><br />
+          <%= f.email_field :email, :class => 'title' %>
+        </p>
+        <p><%= f.submit t(:continue), :class => 'button primary' %></p>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+```
+
+If you wanted to insert some code just before the #registration div on the page you would define an override as follows:
+
+* app/overrides/registration_message.rb
+
+```Ruby
+Deface::Override.new(:virtual_path  => "spree/checkout/registration",
+                     :insert_before => "div#registration",
+                     :text          => "<p>Registration is the future!</p>",
+                     :name          => "registration_future")
+```
+
+This override **inserts** <p>Registration is the future!</p> **before** the div with the id of “registration”.
+
+Deface currently supports the following actions:
+* :remove – Removes all elements that match the supplied selector
+* :replace – Replaces all elements that match the supplied selector, with the content supplied
+* :insert_after – Inserts content supplied after all elements that match the supplied selector
+* :insert_before – Inserts content supplied before all elements that match the supplied selector
+* :insert_top – Inserts content supplied inside all elements that match the supplied selector, as the first child
+* :insert_bottom – Inserts content supplied inside all elements that match the supplied selector, as the last child
+* :set_attributes – Sets (or adds) attributes to all elements that match the supplied selector, expects :attributes option to be passed
+
+
+## Replacing entire view templates
+
+Sometimes the customization required to a view are so substantial that using a Deface override seems impractical. Spree also supports the duplication of views within an application or extension that will completely replace the file of the same name in Spree.
+To override any of Spree’s default views including those for the admin interface, simply create a file with the same filename in your app/views directory.
+For example, to override the main layout, create the file
+* app/views/spree/layouts/spree_application.html.erb
