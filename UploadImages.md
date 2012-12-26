@@ -19,7 +19,7 @@
 ## Controllers
 
 
-    ```ruby
+    ```
     class DemosController < ApplicationController
       
       def new
