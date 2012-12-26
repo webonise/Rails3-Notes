@@ -87,7 +87,7 @@ Deface is a standalone Rails 3 library that enables you to customize Erb templat
 For example, take the Checkout Registration template, which looks like this:
 * app/views/spree/checkout/registration.html.erb
 
-```Ruby
+```erb
 <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @user } %>
 <h2><%= t(:registration) %></h2>
 <div id="registration" data-hook>
