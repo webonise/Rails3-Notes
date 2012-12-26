@@ -43,10 +43,10 @@ Standard practice for including such changes in your application or extension is
 
 To activate your decorators you need to include the following code in your lib/spree_site.rb or lib/extension_name.rb file:
 
-        '''Ruby
-            Dir.glob(File.join(File.dirname(__FILE__), "../app/**/*_decorator*.rb")) do |c|
-                Rails.configuration.cache_classes ? require(c) : load(c)
-            end
-        '''
+        ```Ruby
+        Dir.glob(File.join(File.dirname(__FILE__), "../app/**/*_decorator*.rb")) do |c|
+            Rails.configuration.cache_classes ? require(c) : load(c)
+        end
+        ```
 
 
