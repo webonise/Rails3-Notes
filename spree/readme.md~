@@ -4,10 +4,9 @@ Spree is a full featured commerce platform written for the Ruby on Rails framewo
 
 #Installation
 
-        ```Ruby
           $ gem install spree
           $ spree install 
-        ```
+          
 # Table of Contents
     
 * [Custom Authentication in Spree](#custom-authentication-in-spree)
