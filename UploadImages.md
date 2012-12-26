@@ -19,7 +19,7 @@
 ## Controllers
 
 
-    ```Ruby
+    ```ruby
     class DemosController < ApplicationController
       
       def new
@@ -107,7 +107,6 @@
      * new.js.erb (This is for Upload multiple images)
 
      ```Ruby
-
         $(".uploadPhotoContent").append("<%= escape_javascript(render :partial => "multiple_image", :locals => {:count => @count }) %>");
 
      ```
@@ -131,7 +130,7 @@
 
 * demos.js
 
-    ```Ruby
+    ```javascript
     jQuery(function(event){
 
         /* display preview of images chosen to upload */
