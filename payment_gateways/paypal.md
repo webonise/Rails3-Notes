@@ -41,8 +41,7 @@ Home -> profile.
 And These Same Procedure is carry on to Setup LIve Paypal Account By Going through
 www.paypal.com and with some extra work like Bank Account verfications and company
 Document Submissions and some waiting time for thier approval too.
-We can Check how sandbox appears by going through Following account
-go to developer.paypal.com
-username : ameet.jha26@gmail.com
-Password : 12345678
+##We can Check how sandbox appears by going through Following account go to developer.paypal.com and sign-in using
+*username : ameet.jha26@gmail.com
+*Password : 12345678
 
