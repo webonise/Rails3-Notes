@@ -17,10 +17,10 @@ The foundation of any cloud computing stack begins with its infrastructure. Infr
 * eliminate/minimize the need for administration and maintenance of hardware.
 
 
-![Cloud Computing Infrastructure](https://github.com/webonise/Rail3-Notes/blob/master/Cloud%20and%20OpenStack/cloud-structure.jpg)
+![IaaS PaaS SaaS](https://raw.github.com/webonise/Rail3-Notes/master/Cloud%20and%20OpenStack/cloud-structure.jpg)
 
 
-![Cloud Computing Infrastructure](https://github.com/webonise/Rail3-Notes/blob/master/Cloud%20and%20OpenStack/cloud-virtualization.gif)
+![Cloud Computing Infrastructure](https://raw.github.com/webonise/Rail3-Notes/master/Cloud%20and%20OpenStack/cloud-virtualization.gif)
 
 *(fig.) Cloud Computing Infrastructure
 
@@ -30,7 +30,7 @@ The foundation of any cloud computing stack begins with its infrastructure. Infr
 OpenStack is an open source and scalable operating system for building public and private clouds. It provides control over compute, storage and networking resources.
 
 
-![OpenStack modular Architecture](https://github.com/webonise/Rail3-Notes/blob/master/Cloud%20and%20OpenStack/OpenStack-structure.gif)
+![OpenStack modular Architecture](https://raw.github.com/webonise/Rail3-Notes/master/Cloud%20and%20OpenStack/OpenStack-structure.gif)
 (fig.) Cloud Computing Infrastructure
 
 ###OpenStack Compute:
