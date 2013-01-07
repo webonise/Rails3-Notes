@@ -74,15 +74,9 @@ This example will create an object with 2 event methods:
  * fsm.rest()
 
 The `rest` event will always transition to the `hungry` state, while the `eat` event
-will transition to a state that is dependent on the current state.
+will transition to a state that is dependent on the current state.  
 
->> NOTE: The `rest` event could use a wildcard '*' for the 'from' state if it should be
-allowed from any current state.
-
->> NOTE: The `rest` event in the above example can also be specified as multiple events with
-the same name if you prefer the verbose approach.  
-
-##Example:    
+Example:        
 Here rest event can be called from any state. After calling that, the current state will be 'hungry' .  
  
     var fsm = StateMachine.create({
@@ -93,6 +87,12 @@ Here rest event can be called from any state. After calling that, the current st
         { name: 'eat',  from: 'full',                                  to: 'sick'      },
         { name: 'rest', from: '*', to: 'hungry'    },
    ]});
+
+>> NOTE: The `rest` event could use a wildcard '*' for the 'from' state if it should be
+allowed from any current state.
+
+>> NOTE: The `rest` event in the above example can also be specified as multiple events with
+the same name if you prefer the verbose approach.
 
 
 No-Op Events
