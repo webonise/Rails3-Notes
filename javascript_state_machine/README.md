@@ -80,7 +80,19 @@ will transition to a state that is dependent on the current state.
 allowed from any current state.
 
 >> NOTE: The `rest` event in the above example can also be specified as multiple events with
-the same name if you prefer the verbose approach.
+the same name if you prefer the verbose approach.  
+Example:    
+Here rest event can be called from any state. After calling that, the current state will be 'hungry' .   
+    var fsm = StateMachine.create({
+    initial: 'hungry',
+    events: [
+        { name: 'eat',  from: 'hungry',                                to: 'satisfied' },
+        { name: 'eat',  from: 'satisfied',                             to: 'full'      },
+        { name: 'eat',  from: 'full',                                  to: 'sick'      },
+        { name: 'rest', from: '*', to: 'hungry'    },
+   ]});
+
+
 
 No-Op Events
 ==================================================
