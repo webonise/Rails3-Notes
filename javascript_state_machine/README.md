@@ -86,13 +86,13 @@ No-Op Events
 ==================================================
 There are no-op events that wont transition the state if you omit the to attribute. E.g:
 
-var fsm = StateMachine.create({
-  initial: 'stopped',
-  events: [
-    { name: 'start', from: 'ready',   to: 'running' },
-    { name: 'pause', from: 'running', to: 'paused'  },
-    { name: 'check', from: 'ready'    /* no-op */   }
-]});
+	var fsm = StateMachine.create({
+	  initial: 'stopped',
+	  events: [
+	    { name: 'start', from: 'ready',   to: 'running' },
+	    { name: 'pause', from: 'running', to: 'paused'  },
+	    { name: 'check', from: 'ready'    /* no-op */   }
+	]});
 
 >> NOTE: This is a cosmetic shortcut for declaring the same from and to values.
 
