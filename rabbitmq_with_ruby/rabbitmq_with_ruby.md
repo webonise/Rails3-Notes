@@ -1,6 +1,6 @@
 # Getting started with Ruby and RabbitMQ using bunny
 
-The following guides helps you to get started with AMQP using Bunny. It should take about 30 minutes to read and study the provided code.
+The following guide helps you to get started with AMQP using Bunny. It should take about 30 minutes to read and study the provided code.
 
 # Points that are covered:-
 * Installing [RabbitMQ] (http://www.rabbitmq.com/), a mature popular messaging broker server.
@@ -55,5 +55,11 @@ The following guides helps you to get started with AMQP using Bunny. It should t
   # close the connection
   b.stop
   ```
+
+  To run the code create `.rb` file and put the above code inside it.
+
+  It's done! :-)
+
+
 
 
