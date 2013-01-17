@@ -53,7 +53,7 @@ The following guide helps you to get started with AMQP using Bunny. It should ta
   puts "This is the message: " + msg + "\n\n"
 
   # close the connection
-  b.stop
+  bunny_obj.stop
   ```
 
   To run the code create `.rb` file and put the above code inside it.
