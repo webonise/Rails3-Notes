@@ -3,9 +3,9 @@
 The following guides helps you to get started with AMQP using Bunny. It should take about 30 minutes to read and study the provided code.
 
 # Points that are covered:-
-    * Installing [RabbitMQ] (http://www.rabbitmq.com/), a mature popular messaging broker server.
-    * Installing [Bunny] (https://rubygems.org/gems/bunny) via Rubygems and Bundler.
-    * Running a "Hello, world" messaging example that is a simple demonstration of 1:1 communication.
+* Installing [RabbitMQ] (http://www.rabbitmq.com/), a mature popular messaging broker server.
+* Installing [Bunny] (https://rubygems.org/gems/bunny) Rubygems.
+* Running a "Hello, world" messaging example that is a simple demonstration of 1:1 communication.
 
 # Installing RabbitMQ:-
 * For proper installation follow the steps provided in [RabbitMQ site](http://www.rabbitmq.com/).
