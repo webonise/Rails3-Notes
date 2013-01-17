@@ -8,21 +8,21 @@ The following guides helps you to get started with AMQP using Bunny. It should t
     * Running a "Hello, world" messaging example that is a simple demonstration of 1:1 communication.
 
 # Installing RabbitMQ:-
-   * For proper installation follow the steps provided in [RabbitMQ site](http://www.rabbitmq.com/).
-   * Once installation is done run the following command on the terminal:-
-        * ```bash
-           rabbitmq-server
-          ```
+* For proper installation follow the steps provided in [RabbitMQ site](http://www.rabbitmq.com/).
+* Once installation is done run the following command on the terminal:-
+ ```bash
+ rabbitmq-server
+ ```
 
 # Installing Bunny
 
-  * The guide assumes that ruby installed is of `1.9.2 or higher version`.
-  * Run the following command in the terminal:-
-    * ```bash
-      gem install bunny
-      ```
+* The guide assumes that ruby installed is of `1.9.2 or higher version`.
+* Run the following command in the terminal:-
+ ```bash
+  gem install bunny
+ ```
 
-  * The above command will install bunny gem of 0.8.0 version.
+* The above command will install bunny gem of 0.8.0 version.
 
 
 # "Hello World" example
