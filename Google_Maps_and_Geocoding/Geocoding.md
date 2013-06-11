@@ -14,6 +14,7 @@ or you can add the below gem to your gemfile
     gem 'geocoder'
 
 and run
+###
     bundle install
 
 After having added the gem, we also need to add fields to store the latitude and longitude to the model which will be used while geocoding.
@@ -50,18 +51,21 @@ will return
     s[0].address	# =>	"Central Park, 14 East 60th Street, New York, NY 10022, USA"
 
 
-###*To find all the locations in your model around a certain location
+*To find all the locations in your model around a certain location
+###
     Address.near("Central Park, New York")
 will return all the address entries in your Address model that are near the specified location.
 
 We can also give an additional parameter that specifies the radius from the entered location within which we are supposed to search.
+
 ###
     search = Geocoding.search("Central Park, New York", 4)
     
 * bearing_to method of the Ruby Geocoder gem will give us the directions from the stored location to the given location.
+
 ###Example
 Suppose we have stored an address location inside a variable 'loc', we can find the directions in the following way
-###
+
     loc.bearing_to("NYC")
 
 This will return the directions from the address inside loc to the given location(here - NYC)
@@ -71,8 +75,3 @@ This will return the directions from the address inside loc to the given locatio
     loc.distance_to("NYC")
     
 This will return the distance from the address stored within loc and NYC.
-
-
-
-
-
