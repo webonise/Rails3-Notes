@@ -6,9 +6,11 @@ Geocoder and gmaps4rails is among the most popular gems and work well while prov
 The Geocoder gem allows us to use Ruby to perform geocoding i.e obtaining the latitude and longitude from the given location/ip address and reverse geocoding i.e obtaining the address(location) from the given co-ordinates.
 
 You can use
+###
     gem install geocoder
 
 or you can add the below gem to your gemfile
+###
     gem 'geocoder'
 
 and run
