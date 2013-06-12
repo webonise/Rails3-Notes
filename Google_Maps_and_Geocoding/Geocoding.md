@@ -46,9 +46,9 @@ after_validation validates the given coordinates and returns the valid address f
  
 will return
     
-    s[0].latitude	# =>	40.7736154
-    s[0].longitude	# =>	-73.9711057
-    s[0].address	# =>	"Central Park, 14 East 60th Street, New York, NY 10022, USA"
+    search[0].latitude	# =>	40.7736154
+    search[0].longitude	# =>	-73.9711057
+    search[0].address	# =>	"Central Park, 14 East 60th Street, New York, NY 10022, USA"
 
 
 *To find all the locations in your model around a certain location
