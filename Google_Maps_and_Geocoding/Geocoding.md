@@ -46,9 +46,9 @@ after_validation validates the given coordinates and returns the valid address f
  
 will return
     
-    s[0].latitude	# =>	40.7736154
-    s[0].longitude	# =>	-73.9711057
-    s[0].address	# =>	"Central Park, 14 East 60th Street, New York, NY 10022, USA"
+    search[0].latitude	# =>	40.7736154
+    search[0].longitude	# =>	-73.9711057
+    search[0].address	# =>	"Central Park, 14 East 60th Street, New York, NY 10022, USA"
 
 
 *To find all the locations in your model around a certain location
@@ -71,6 +71,7 @@ Suppose we have stored an address location inside a variable 'loc', we can find 
 This will return the directions from the address inside loc to the given location(here - NYC)
 
 * To get the distance from the given location to the searched location, we use distance_to.
+
 ###Example
     loc.distance_to("NYC")
     
