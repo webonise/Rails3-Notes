@@ -71,6 +71,7 @@ Suppose we have stored an address location inside a variable 'loc', we can find 
 This will return the directions from the address inside loc to the given location(here - NYC)
 
 * To get the distance from the given location to the searched location, we use distance_to.
+
 ###Example
     loc.distance_to("NYC")
     
